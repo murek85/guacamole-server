@@ -40,8 +40,13 @@ java -jar target/gts.jar --guacd-host 1.2.3.4 --guacd-port 4822 --port 8080
 | drive-path   | The directory on the Guacamole server in which transferred files should be stored. This directory must be accessible by guacd and both readable and writable by the user that runs guacd. This parameter does not refer to a directory on the RDP server |
 
 
-Example connection string to an RDP server:
+Example connection string to an server:
 
 ```
-http://localhost:8080/ws?hostname=localhost&port=3389&width=1024&height=768&audio=audio/L16
+RDP:
+ws://192.168.88.129:8008/ws?hostname=192.168.88.131&port=3390&dpi=96&protocol=rdp&image=image%2Fpng&width=1920&height=1080&ignore-cert=true&enable-drive=true&drive-path=%2Fshared-folder&enable-sftp=undefined&clipboard-encoding=undefined
+
+VNC:
+ws://192.168.88.129:8008/ws?hostname=192.168.88.130&port=5900&dpi=96&protocol=vnc&image=image%2Fpng&width=1920&height=1080&ignore-cert=undefined&enable-drive=undefined&drive-path=undefined&enable-sftp=undefined&clipboard-encoding=undefined
+
 ```
